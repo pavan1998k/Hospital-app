@@ -4,6 +4,8 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 
 @Entity
 public class Branch {
@@ -13,6 +15,7 @@ public class Branch {
 	private String name;
 	private String email;
 	private long phone;
+	
 	public int getId() {
 		return id;
 	}
@@ -37,6 +40,4 @@ public class Branch {
 	public void setPhone(long phone) {
 		this.phone = phone;
 	}
-	
-	
 }

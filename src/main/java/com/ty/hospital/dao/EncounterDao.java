@@ -1,4 +1,4 @@
-package com.ty.hospital.dao.imp;
+package com.ty.hospital.dao;
 
 import java.util.List;
 
