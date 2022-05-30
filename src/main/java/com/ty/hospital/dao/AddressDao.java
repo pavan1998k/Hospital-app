@@ -1,9 +1,7 @@
-package com.ty.hospital.dao.imp;
+package com.ty.hospital.dao;
 
-import java.util.List;
 
 import com.ty.hospital.dto.Address;
-import com.ty.hospital.dto.Branch;
 
 public interface AddressDao {
 	Address saveAddress(Address address);

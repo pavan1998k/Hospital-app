@@ -13,6 +13,7 @@ public class Branch {
 	private String name;
 	private String email;
 	private long phone;
+	
 	public int getId() {
 		return id;
 	}
@@ -37,6 +38,4 @@ public class Branch {
 	public void setPhone(long phone) {
 		this.phone = phone;
 	}
-	
-	
 }
