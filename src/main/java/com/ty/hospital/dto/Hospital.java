@@ -17,8 +17,7 @@ public class Hospital {
 	private int id;
 	private String name;
 	private String gstNumber;
-	@OneToMany(cascade=CascadeType.ALL)
-	@JoinColumn
+	@OneToMany(cascade=CascadeType.ALL,mappedBy="hospital")
 	private List<Branch> branchs;
 	public int getId() {
 		return id;

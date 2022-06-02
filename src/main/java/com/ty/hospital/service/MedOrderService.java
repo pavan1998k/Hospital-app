@@ -1,10 +1,10 @@
-package com.ty.hospital.dao;
+package com.ty.hospital.service;
 
 import java.util.List;
 
 import com.ty.hospital.dto.MedOrder;
 
-public interface MedOrderDao {
+public interface MedOrderService {
 	public MedOrder saveMedOrder(MedOrder medOrder, int eid);
 
 	public MedOrder getMedOrderById(int id);
@@ -16,5 +16,4 @@ public interface MedOrderDao {
 	public MedOrder updateMedOrder(MedOrder medOrder);
 
 	public MedOrder deleteMedOrderById(int id);
-	
 }

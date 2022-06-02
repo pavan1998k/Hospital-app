@@ -1,34 +1,41 @@
 package com.ty.hospital.dto;
 
 import java.time.LocalDateTime;
+import java.util.List;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
+import javax.persistence.OneToMany;
 
 @Entity
 public class Encounter {
 	@Id
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	private int id;
-	private int person_id;
 	private LocalDateTime admit_date_time;
 	private String reason;
 	private String status;
 	private LocalDateTime discharge_date_time;
+	@ManyToOne(cascade=CascadeType.ALL)
+	@JoinColumn(name="P_id")
+	private Person person;
+	@ManyToOne
+	@JoinColumn
+	private Branch branch;
+	@OneToMany(mappedBy = "encounter")
+	private List<Observation> observation;
+	@OneToMany(mappedBy = "encounter")
+	private List<MedOrder> medOrder;
 	public int getId() {
 		return id;
 	}
 	public void setId(int id) {
 		this.id = id;
-	}
-	
-	public int getPerson_id() {
-		return person_id;
-	}
-	public void setPerson_id(int person_id) {
-		this.person_id = person_id;
 	}
 	public LocalDateTime getAdmit_date_time() {
 		return admit_date_time;
@@ -54,6 +61,29 @@ public class Encounter {
 	public void setDischarge_date_time(LocalDateTime discharge_date_time) {
 		this.discharge_date_time = discharge_date_time;
 	}
-	
+	public Person getPerson() {
+		return person;
+	}
+	public void setPerson(Person person) {
+		this.person = person;
+	}
+	public Branch getBranch() {
+		return branch;
+	}
+	public void setBranch(Branch branch) {
+		this.branch = branch;
+	}
+	public List<Observation> getObservation() {
+		return observation;
+	}
+	public void setObservation(List<Observation> observation) {
+		this.observation = observation;
+	}
+	public List<MedOrder> getMedOrder() {
+		return medOrder;
+	}
+	public void setMedOrder(List<MedOrder> medOrder) {
+		this.medOrder = medOrder;
+	}
 	
 }
