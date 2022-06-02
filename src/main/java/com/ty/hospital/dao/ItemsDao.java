@@ -9,5 +9,5 @@ public interface ItemsDao {
 	Item getItemById(int id);
 	List<Item> getItemByMedOrderId(int medOrder_id);
 	Item updateItem(Item item,int id)  ;
-	boolean deleteItem(int id);
+	boolean deleteItemById(int id);
 }

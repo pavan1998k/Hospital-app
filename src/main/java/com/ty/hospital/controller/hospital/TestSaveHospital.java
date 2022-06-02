@@ -9,28 +9,24 @@ import com.ty.hospital.service.impl.HospitalServiceImp;
 public class TestSaveHospital {
 	public static void main(String[] args) {
 		Hospital hospital=new Hospital();
-		hospital.setName("Columbia Hospital");
-		hospital.setGstNumber("1324KA486532IND");
+		hospital.setName("Baptist Hospital");
+		hospital.setGstNumber("4321KA423568IND");
 		
 		Branch branch=new Branch();
-		branch.setName("Basvangudi");
-		branch.setEmail("colBas@gmail.com");
+		branch.setName("Hebbal");
+		branch.setEmail("baptHeb@gmail.com");
 		branch.setPhone(7856423896l);
+		branch.setHospital(hospital);
 		
 		Branch branch1=new Branch();
-		branch1.setName("Vijayanagar");
-		branch1.setEmail("colViji@gmail.com");
+		branch1.setName("Yelahanka");
+		branch1.setEmail("baptYel@gmail.com");
 		branch1.setPhone(8741258693l);
-		
-		Branch branch2=new Branch();
-		branch2.setName("Kengeri");
-		branch2.setEmail("colKen@gmail.com");
-		branch2.setPhone(8741258693l);
+		branch1.setHospital(hospital);
 		
 		List<Branch> branchs=new ArrayList<Branch>();
 		branchs.add(branch);
 		branchs.add(branch1);
-		branchs.add(branch2);
 		hospital.setBranchs(branchs);
 		
 		HospitalServiceImp hospitalServiceImp=new HospitalServiceImp();
